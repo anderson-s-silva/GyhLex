@@ -44,7 +44,7 @@ public class GyhLex {
 						this.arraytoken.add(new Token(TipoToken.OpRelMenorIgual, "<=", this.cont_linhas));
 						i++;
 					}else {
-						System.out.println("=" + "ERROR: caractere inv�lido. Linha: " + this.cont_linhas + i);
+						System.out.println("=" + "ERROR: caractere inválido. Linha: " + this.cont_linhas + " Caractere:"+i);
 						System.exit(1);
 					}
 					
@@ -83,7 +83,7 @@ public class GyhLex {
 								i++;
 								contadorPontos++;
 							}else {
-								System.out.println(lexema + "ERROR: palavra inv�lida. Linha: " + this.cont_linhas);
+								System.out.println(lexema + "ERROR: palavra inválida. Linha: " + this.cont_linhas);
 								System.exit(1);
 							}
 						}else break;
@@ -99,12 +99,16 @@ public class GyhLex {
 					}
 				}//end if numbers
 				else if(flexoes.charAt(i) == '"') {//chain
+					lexema = lexema.concat("\"");
+					i++;
 					while(i < flexoes.length()) {
-						if(flexoes.charAt(i + 1) != '"') {
-							lexema = lexema.concat(Character.toString(flexoes.charAt(i+1)));
+						if(flexoes.charAt(i) != '"') {
+							lexema = lexema.concat(Character.toString(flexoes.charAt(i)));
+							
 							i++;
-						}
+						}else break;
 					}
+					lexema = lexema.concat("\"");
 					this.arraytoken.add(new Token(TipoToken.Cadeia, lexema, this.cont_linhas));
 					lexema = "";
 					//end chain
@@ -160,17 +164,17 @@ public class GyhLex {
 					}else if(lexema.equals("FIM")) {
 						this.arraytoken.add(new Token(TipoToken.PCFim, lexema, this.cont_linhas));
 					}else {
-						System.out.println(lexema + " ERROR: palavra inv�lida. Linha: " + this.cont_linhas);
+						System.out.println(lexema + " ERROR: palavra inválida. Linha: " + this.cont_linhas);
 						System.exit(1);
 					}
 					lexema = "";
 				}//end reserved words
 				else {
-					System.out.println(Character.toString(flexoes.charAt(i))+" ERROR: caractere inv�lido. Linha: " + this.cont_linhas + i);
+					System.out.println(Character.toString(flexoes.charAt(i))+" ERROR: caractere inválido. Linha: " + this.cont_linhas + " Caractere: "+i);
 					System.exit(1);
 				}
 			}//end for
-		}//end forzão
+		}//end forzÃ£o
 		System.out.println(this.arraytoken);
 		System.exit(0);
 	}		
