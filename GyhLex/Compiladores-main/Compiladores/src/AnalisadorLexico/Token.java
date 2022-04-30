@@ -14,4 +14,11 @@ public class Token{
   public String toString(){
     return "<"+nome+","+lexema+","+linha+">";
   }
+  
+  public TipoToken getnome() {
+	  return this.nome;
+  }
+  public int getlinha() {
+	  return this.linha;
+  }
 }

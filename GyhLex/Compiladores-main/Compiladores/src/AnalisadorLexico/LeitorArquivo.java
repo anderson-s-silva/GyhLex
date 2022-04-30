@@ -1,3 +1,4 @@
+//LeitorArquivo.java reusado do grupo do Cristian Veggian
 package AnalisadorLexico;
 
 import java.util.ArrayList;
@@ -9,14 +10,14 @@ public class LeitorArquivo{
   public LeitorArquivo(){
   }
 
-  public ArrayList<String> lerLinhas(String nome){
+  public ArrayList<String> lerLinhas(String nome){//metodo
 
     ArrayList<String> linhas = new ArrayList<String>();
     
     try{
-        Scanner scan = new Scanner(new File(nome));
+        Scanner scan = new Scanner(new File(nome));//entrada e o arquivo
 
-        while(scan.hasNextLine()){
+        while(scan.hasNextLine()){//enquanto tiver uma proxima linha, add array
              linhas.add(scan.nextLine());
         }
       }catch(Exception e){

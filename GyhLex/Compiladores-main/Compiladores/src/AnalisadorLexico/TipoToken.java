@@ -6,5 +6,6 @@ package AnalisadorLexico;
 	OpAritMult, OpAritDiv, OpAritSoma, OpAritSub, OpRelMenor, OpRelMenorIgual, 
 	OpRelMaior, OpRelMaiorIgual, OpRelIgual, OpRelDif,
 	OpBoolE, OpBoolOu, Delim, Atrib, AbrePar, FechaPar,
-	Var, NumInt, NumReal, Cadeia
+	Var, NumInt, NumReal, Cadeia, FimArq
   }
+  
